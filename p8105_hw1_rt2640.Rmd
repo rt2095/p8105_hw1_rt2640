@@ -20,3 +20,19 @@ q1_df = tibble(
   vec_factor = factor(c("A","B","C","A","B","C","A","B","C","A"))
 )
 ```
+
+```{r question_1_mean}
+
+mean1 = mean(pull(q1_df,var = vec_numeric))
+mean2 = mean(pull(q1_df, var = vec_numeric_logical))
+mean3 = mean(pull(q1_df , var = vec_char))
+mean4 = mean(pull(q1_df , var = vec_factor))
+
+mean5 = mean(as.numeric(pull(q1_df , var = vec_factor)))
+```
+
+Mean 1-4 are the means for the vectors from the original data frame.The mean for variables vec_numeric, vec_logical, and vec_character were calculated using the pull function to pull the variables from the data frames. Since vec_factor is a character variable, mean4 resulted in an error. Mean5 converts the vec_factor from a character variable to a numeric variable using the as.numeric function to successfully output the mean for the variable.
+
+
+
+

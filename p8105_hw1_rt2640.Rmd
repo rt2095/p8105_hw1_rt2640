@@ -4,25 +4,19 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
+library(tidyverse)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+Question 1
+This code chunk includes creating a data frame with sample size of 10 variables randomly selected from a normal distribution with values greater than 0. It also includes creating a character vector and a factor vector to create 3 levels and taking a mean of each of the vectors in the data frame.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+```{r question_1}
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+q1_df = tibble(
+  vec_numeric = rnorm(10),
+  vec_numeric_logical = vec_numeric > 0,
+  vec_char = vector(length = 10),
+  vec_factor = factor(c("A","B","C","A","B","C","A","B","C","A"))
+)
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

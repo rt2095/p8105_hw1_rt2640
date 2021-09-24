@@ -8,7 +8,7 @@ library(tidyverse)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Question 1
+### Question 1
 This code chunk includes creating a data frame with sample size of 10 variables randomly selected from a normal distribution with values greater than 0. It also includes creating a character vector and a factor vector to create 3 levels and taking a mean of each of the vectors in the data frame.
 
 ```{r question_1}
@@ -33,6 +33,22 @@ mean5 = mean(as.numeric(pull(q1_df , var = vec_factor)))
 
 Mean 1-4 are the means for the vectors from the original data frame.The mean for variables vec_numeric, vec_logical, and vec_character were calculated using the pull function to pull the variables from the data frames. Since vec_factor is a character variable, mean4 resulted in an error. Mean5 converts the vec_factor from a character variable to a numeric variable using the as.numeric function to successfully output the mean for the variable.
 
+### Question 2 
+This code chunk includes includes installing the palmerpenguins package and loading the penguins dataset along with a short description of the dataset.
 
+```{r question_2_loading_dataset}
+
+data("penguins", package = "palmerpenguins")
+
+```
+
+#### Summary of the data set 
+##### Table 1
+
+`r knitr::kable(summary(penguins))`
+1. The data set includes `r nrow(penguins)` rows and `r ncol(penguins)` columns. 
+2. The data set includes variables penguin species, the island, the sex of the penguins, and the year the data was collected.
+3. Other descriptive variables include bill length, bill depth, flipper length, and body mass as decribed in Table 1.
+4. The mean flipper length of penguins in the given data set is `r round(mean(pull(penguins, var = flipper_length_mm),na.rm=TRUE),2)` mm.
 
 

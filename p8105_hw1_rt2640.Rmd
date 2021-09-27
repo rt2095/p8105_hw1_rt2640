@@ -3,7 +3,7 @@ title: "P8105_HW1_RT2640"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 library(tidyverse)
 library(ggplot2)
 knitr::opts_chunk$set(echo = TRUE)

@@ -59,7 +59,13 @@ data("penguins", package = "palmerpenguins")
 
 This code chunk includes creating a scatterplot for flipper length vs bill length and saving the scatterplot.
 
+
 ```{r question_2_scatterplot}
 
+library(ggplot2)
+ggplot(penguins, aes(x = bill_length_mm , y = flipper_length_mm , color = species)) + geom_point()
+
+ggsave("./09272021_q2_penguins_species_scatterplot.jpeg")
+```
 
 
